@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-      <button onclick="changeStylesheet('fancy.css')">fancy mode</button>
+      <!-- Theme switcher buttons -->
+    <button onclick="changeStylesheet('fancy.css')">fancy mode</button>
     <button onclick="changeStylesheet('minimal.css')">minimal mode</button>
     <button onclick="changeStylesheet('90s.css')">90s mode</button>
 
     <script>
     const stylesheetRegex = /[^/]*\.css$/;
-
     function changeStylesheet(style){
         let element = document.getElementById("_stylesheet");
         element.setAttribute(
