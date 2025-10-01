@@ -1,0 +1,129 @@
+/* ==========================
+   90s Theme - Flexbox Layout
+   ========================== */
+
+/* General reset-ish */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Papyrus", cursive;
+  background: linear-gradient(to bottom, #ff00ff, #00ffff);
+  color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header bar - neon style */
+header {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff0,
+    #ff0 10px,
+    #f0f 10px,
+    #f0f 20px
+  );
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  text-shadow: 2px 2px 2px #0ff;
+  border-bottom: 5px double black;
+}
+
+/* Navigation - flex row of chunky buttons */
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  background: #000;
+  border-top: 3px solid #0ff;
+  border-bottom: 3px solid #0ff;
+}
+
+nav a {
+  color: lime;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: 2px outset #ff0;
+  background: #222;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  background: #ff0;
+  color: #000;
+}
+
+/* Main layout - sidebar and content using flex */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Sidebar */
+aside {
+  flex: 1;
+  background: #fff url("https://www.transparenttextures.com/patterns/checkerboard-cross.png") repeat;
+  border: 3px groove #f0f;
+  padding: 1rem;
+  max-width: 250px;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+/* Article content */
+article {
+  flex: 3;
+  background: #ffffcc;
+  border: 3px ridge #00f;
+  padding: 1.5rem;
+  overflow-y: auto;
+  font-family: "Times New Roman", serif;
+}
+
+/* Footer with animated text */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #000;
+  color: #ff0;
+  font-size: 1rem;
+  border-top: 5px dashed #f0f;
+}
+
+/* Blink effect for footer text (90s vibes!) */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+footer span.blink {
+  animation: blink 1s step-start infinite;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  aside {
+    max-width: none;
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav a {
+    margin: 0.25rem 0;
+  }
+  header {
+    font-size: 1.5rem;
+  }
+}

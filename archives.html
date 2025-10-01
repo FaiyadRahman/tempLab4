@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-      <title>My Cool Site - Archives</title>
+    <button onclick="changeStylesheet('fancy.css')">fancy mode</button>
+    <button onclick="changeStylesheet('minimal.css')">minimal mode</button>
+    <button onclick="changeStylesheet('90s.css')">90s mode</button>
+
+    <script>
+    const stylesheetRegex = /[^/]*\.css$/;
+
+    function changeStylesheet(style){
+        let element = document.getElementById("_stylesheet");
+        element.setAttribute(
+            "href",
+            element.getAttribute("href").replace(stylesheetRegex, style)
+        );
+    }
+    </script>
+
+          <title>My Cool Site - Archives</title>
       <meta charset="utf-8" />
       <meta name="generator" content="Pelican" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +40,10 @@
     <dl>
             <dt>Sun 04 February 2024</dt>
             <dd><a href="/moby-dick.html">Moby Dick</a></dd>
+            <dt>Sun 04 February 2024</dt>
+            <dd><a href="/pride-and-prejudice.html">Pride and Prejudice</a></dd>
+            <dt>Sun 04 February 2024</dt>
+            <dd><a href="/the-great-gatsby.html">The Great Gatsby</a></dd>
             <dt>Mon 07 January 2019</dt>
             <dd><a href="/my-first-article.html">My First Article</a></dd>
     </dl>

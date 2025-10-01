@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-      <title>My Cool Site</title>
+    <button onclick="changeStylesheet('fancy.css')">fancy mode</button>
+    <button onclick="changeStylesheet('minimal.css')">minimal mode</button>
+    <button onclick="changeStylesheet('90s.css')">90s mode</button>
+
+    <script>
+    const stylesheetRegex = /[^/]*\.css$/;
+
+    function changeStylesheet(style){
+        let element = document.getElementById("_stylesheet");
+        element.setAttribute(
+            "href",
+            element.getAttribute("href").replace(stylesheetRegex, style)
+        );
+    }
+    </script>
+
+          <title>My Cool Site</title>
       <meta charset="utf-8" />
       <meta name="generator" content="Pelican" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +45,26 @@
                 <p>Published: <time datetime="2024-02-04T00:00:00-07:00"> Sun 04 February 2024 </time></p>
                 <address>By
                         <a href="/author/herman-melville.html">Herman Melville</a>
+                </address>
+            </footer>
+        </article>
+        <article>
+            <header> <h2><a href="/pride-and-prejudice.html" rel="bookmark" title="Permalink to Pride and Prejudice">Pride and Prejudice</a></h2> </header>
+            <section>The Project Gutenberg eBook of Pride and Prejudice</section>
+            <footer>
+                <p>Published: <time datetime="2024-02-04T00:00:00-07:00"> Sun 04 February 2024 </time></p>
+                <address>By
+                        <a href="/author/jane-austen.html">Jane Austen</a>
+                </address>
+            </footer>
+        </article>
+        <article>
+            <header> <h2><a href="/the-great-gatsby.html" rel="bookmark" title="Permalink to The Great Gatsby">The Great Gatsby</a></h2> </header>
+            <section>The Project Gutenberg eBook of The Great Gatsby</section>
+            <footer>
+                <p>Published: <time datetime="2024-02-04T00:00:00-07:00"> Sun 04 February 2024 </time></p>
+                <address>By
+                        <a href="/author/f-scott-fitzgerald.html">F. Scott Fitzgerald</a>
                 </address>
             </footer>
         </article>

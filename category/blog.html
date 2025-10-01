@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-      <title>My Cool Site - Blog category</title>
+    <button onclick="changeStylesheet('fancy.css')">fancy mode</button>
+    <button onclick="changeStylesheet('minimal.css')">minimal mode</button>
+    <button onclick="changeStylesheet('90s.css')">90s mode</button>
+
+    <script>
+    const stylesheetRegex = /[^/]*\.css$/;
+
+    function changeStylesheet(style){
+        let element = document.getElementById("_stylesheet");
+        element.setAttribute(
+            "href",
+            element.getAttribute("href").replace(stylesheetRegex, style)
+        );
+    }
+    </script>
+
+          <title>My Cool Site - Blog category</title>
       <meta charset="utf-8" />
       <meta name="generator" content="Pelican" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
