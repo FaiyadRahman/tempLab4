@@ -17,6 +17,7 @@
           <hgroup><h1><a href="/">My Cool Site</a></h1></hgroup>
           <nav><ul>
                 <li><a href="/category/blog.html" >Blog</a></li>
+                <li><a href="/category/books.html" >books</a></li>
           </ul></nav>
       </header>
       <main>
